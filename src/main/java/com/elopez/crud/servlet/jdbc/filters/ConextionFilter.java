@@ -1,4 +1,4 @@
-package com.elopez.crud.servlet.jdbc.middlewares;
+package com.elopez.crud.servlet.jdbc.filters;
 
 import java.io.IOException;
 import java.sql.Connection;

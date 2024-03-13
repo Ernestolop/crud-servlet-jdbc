@@ -16,7 +16,7 @@ import com.elopez.crud.servlet.jdbc.services.ProductService;
 import com.elopez.crud.servlet.jdbc.services.ProductServiceImpl;
 
 @WebServlet("/products")
-public class ProductServlet extends HttpServlet {
+public class ProductsServlet extends HttpServlet {
     
     @Override 
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException{
