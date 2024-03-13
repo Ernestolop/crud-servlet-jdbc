@@ -14,6 +14,7 @@ Se debe generar un war con el proyecto y subirla en un tomcat
 
    ```bash
    git clone https://github.com/Ernestolop/rest_spring_crud.git
+   ```
 
 2. **Base de datos**
    Crea una base de datos postgres, y modifica las credenciales correspondientes en el context.xml
@@ -23,6 +24,7 @@ Se debe generar un war con el proyecto y subirla en un tomcat
 
     ```bash
    insert into users(id, name, password, email) values(1, 'admin', '123456', 'correo@correo.com');
+   ```
 
     Inserta algunos productos
 
