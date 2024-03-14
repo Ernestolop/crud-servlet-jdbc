@@ -6,12 +6,10 @@ import jakarta.servlet.http.HttpServletResponse;
 import jakarta.servlet.http.HttpSession;
 
 import java.io.IOException;
-import java.sql.Connection;
 import java.util.Optional;
 
 import com.elopez.crud.servlet.jdbc.models.User;
 import com.elopez.crud.servlet.jdbc.services.UserService;
-import com.elopez.crud.servlet.jdbc.services.UserServiceImpl;
 import com.elopez.crud.servlet.jdbc.services.UserServiceJpaImpl;
 import com.elopez.crud.servlet.jdbc.utilities.JpaUtil;
 
@@ -22,7 +20,7 @@ import jakarta.servlet.annotation.WebServlet;
 @WebServlet("/login")
 public class LoginServlet extends HttpServlet {
 
-    EntityManager entityManager = JpaUtil.getEntityManager();
+    private EntityManager entityManager = JpaUtil.getEntityManager();
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
