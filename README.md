@@ -20,8 +20,8 @@ Se debe generar un war con el proyecto y subirla en un tomcat
    Crea una base de datos postgres, y modifica las credenciales correspondientes en el context.xml
 
 3. **Datos**
-   Las tablas están configuradas para crearse y destruirse por cada vez que se levante la app
-   Los datos de las tabalas de poblan automáticamente al levantar la app gracias al script import.sql
+   Las tablas están configuradas para crearse y destruirse por cada vez que se levante la app.
+   Los datos de las tabalas se poblan automáticamente al levantar la app gracias al script import.sql
    Usuario disponible para la prueba: admin, 123456
 
 4. **Genera el War y subelo en un tomcat**
