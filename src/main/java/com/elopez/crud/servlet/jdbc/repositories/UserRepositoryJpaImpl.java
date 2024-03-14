@@ -1,6 +1,7 @@
 package com.elopez.crud.servlet.jdbc.repositories;
 
 import java.util.List;
+import java.util.Optional;
 
 import com.elopez.crud.servlet.jdbc.models.User;
 
@@ -38,7 +39,11 @@ public class UserRepositoryJpaImpl implements UserRepositoryJpa{
     }
 
     @Override
-    public User byName(String name) {
-        return entityManager.createQuery("select u from User u where u.name = :name", User.class).setParameter("name", name).getSingleResult();
+    public Optional<User> byName(String name) {
+        return entityManager.createQuery("select u from User u where u.name = :name", User.class)
+                .setParameter("name", name)
+                .getResultList()
+                .stream()
+                .findFirst();
     }
 }

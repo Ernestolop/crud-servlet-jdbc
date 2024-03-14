@@ -12,12 +12,17 @@ import java.util.Optional;
 import com.elopez.crud.servlet.jdbc.models.User;
 import com.elopez.crud.servlet.jdbc.services.UserService;
 import com.elopez.crud.servlet.jdbc.services.UserServiceImpl;
+import com.elopez.crud.servlet.jdbc.services.UserServiceJpaImpl;
+import com.elopez.crud.servlet.jdbc.utilities.JpaUtil;
 
+import jakarta.persistence.EntityManager;
 import jakarta.servlet.ServletException;
 import jakarta.servlet.annotation.WebServlet;
 
 @WebServlet("/login")
 public class LoginServlet extends HttpServlet {
+
+    EntityManager entityManager = JpaUtil.getEntityManager();
 
     @Override
     protected void doGet(HttpServletRequest request, HttpServletResponse response) throws IOException, ServletException {
@@ -34,7 +39,7 @@ public class LoginServlet extends HttpServlet {
         String name = request.getParameter("name");
         String password = request.getParameter("password");
 
-        UserService userService = new UserServiceImpl((Connection) request.getAttribute("connection"));
+        UserService userService = new UserServiceJpaImpl(entityManager);
         Optional<User> userOptional = userService.login(name, password);
 
         if (userOptional.isPresent()) {
